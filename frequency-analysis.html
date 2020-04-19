@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="frequency-analysis.js"></script>
 
 <body>
     <nav>
@@ -35,6 +36,37 @@
             ></textarea>
             <label for="encrypted_text">Encrypted Text</label>
           </div>
+          <div class="input-field col s4"></div>
+
+          <div class="input-field col s4">
+            <a
+              style="width: 100%;"
+              class="waves-effect waves-light btn center-align"
+              onclick="frequencyList()"
+              >SHOW FREQUENCIES</a
+            >
+          </div>
+
+          <div class="input-field col s4"></div>
+
+          <div
+            class="input-field col s12"
+            id="frequencyItems"
+            style="padding-top: 30px;"
+          ></div>
+
+          <div class="input-field col s4"></div>
+
+          <div class="input-field col s4">
+            <a
+              style="width: 100%; display: none;"
+              class="waves-effect waves-light btn center-align"
+              onclick="makeSubstitutions()"
+              >MAKE SUBSTITUTIONS</a
+            >
+          </div>
+
+          <div class="input-field col s4"></div>
         </div>
       </div>
     </div>
