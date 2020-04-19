@@ -16,6 +16,11 @@ function frequencyList() {
     }
 
     output = order(charNotOrdered, countsNotOrdered);
+    for (i = 0; i < englishAlphabet.length; i++) {
+        document.getElementById("frequencyItems").innerHTML +=
+            output[0][i] + ":" + output[1][i] + " <br>";
+    }
+
     console.log(output[0] + ":" + output[1]);
 }
 
