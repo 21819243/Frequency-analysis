@@ -16,12 +16,40 @@ function frequencyList() {
     }
 
     output = order(charNotOrdered, countsNotOrdered);
-    for (i = 0; i < englishAlphabet.length; i++) {
-        document.getElementById("frequencyItems").innerHTML +=
-            output[0][i] + ":" + output[1][i] + " <br>";
+
+    orderedLetters = output[0];
+    countsOrdered = output[1];
+
+    frequencyTable = "<p style=\"margin-top:20px;\">Frequencies of the given text:</p><table id=\"freqTable\"><tr>";
+
+    for (i = 0; i < orderedLetters.length; i++) {
+        frequencyTable += "<td style=\"text-align:center\">";
+        frequencyTable += "<input type=\"text\" id=\"origLetter_" + i + "\" style=\"width:20px;border:none;background-color:transparent;text-align:center\" value=\"" + orderedLetters[i] + "\" readonly>";
+        frequencyTable += "</td>";
     }
 
-    console.log(output[0] + ":" + output[1]);
+    frequencyTable += "</tr><tr>";
+    for (i = 0; i < orderedLetters.length; i++) {
+        frequencyTable += "<td style=\"text-align:center\">";
+        frequencyTable += countsOrdered[i];
+        frequencyTable += "</td>";
+    }
+
+    frequencyTable += "</tr><tr>";
+
+    frequencyTable += "</tr><tr>";
+    for (i = 0; i < orderedLetters.length; i++) {
+        frequencyTable += "<td style=\"text-align:center\">";
+        frequencyTable += "<input type=\"text\" id=\"subsLetter_" + i + "\" maxlength=\"1\" style=\"width:20px\">";
+        frequencyTable += "</td>";
+    }
+    frequencyTable += "</tr></table><br>";
+
+    // for (i = 0; i < englishAlphabet.length; i++) {
+    //     document.getElementById("frequencyItems").innerHTML = "<table id=\"freqTable\"><tr>";
+    document.getElementById("frequencyItems").innerHTML = frequencyTable;
+
+    // }
 }
 
 function letterCount(letter, toCheck) {
