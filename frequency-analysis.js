@@ -1,3 +1,5 @@
+//Github page: https://github.com/21819243/Frequency-analysis
+
 function frequencyList() {
     var englishAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var encryptedText = document
