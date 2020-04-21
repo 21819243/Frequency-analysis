@@ -44,12 +44,25 @@ function frequencyList() {
         frequencyTable += "</td>";
     }
     frequencyTable += "</tr></table><br>";
-
-    // for (i = 0; i < englishAlphabet.length; i++) {
-    //     document.getElementById("frequencyItems").innerHTML = "<table id=\"freqTable\"><tr>";
     document.getElementById("frequencyItems").innerHTML = frequencyTable;
+    document.getElementById("makeSubsButton").style.display = "block";
+}
 
-    // }
+function makeSubstitutions() {
+    var englishAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var decryptedTextResult = document
+        .getElementById("encrypted_text")
+        .value.toUpperCase();
+    document.getElementById("result_div").style.display = "block";
+    document.getElementById("decrypted_text").focus();
+    document.getElementById("decrypted_text").value = decryptedTextResult.toLowerCase();
+
+    for (i = 0; i < englishAlphabet.length; i++) {
+        if (document.getElementById("subsLetter_" + i).value != "") {
+            decryptedTextResult = decryptedTextResult.replace(RegExp(document.getElementById("origLetter_" + i).value, 'g'), document.getElementById("subsLetter_" + i).value.toLowerCase());
+        }
+    }
+    document.getElementById("decrypted_text").value = decryptedTextResult;
 }
 
 function letterCount(letter, toCheck) {

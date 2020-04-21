@@ -13,7 +13,7 @@
 
 <body>
     <nav>
-        <div class="nav-wrapper" style="background-color: #74112b;">
+        <div class="nav-wrapper" style="background-color: #26a69a;">
             <a href="#" class="brand-logo center" style="font-size: 20px !important;">Frequency Analysis</a
         >
       </div>
@@ -58,7 +58,7 @@
           <div class="input-field col s4"></div>
 
           <div class="input-field col s4">
-            <a
+            <a id="makeSubsButton"
               style="width: 100%; display: none;"
               class="waves-effect waves-light btn center-align"
               onclick="makeSubstitutions()"
@@ -67,6 +67,16 @@
           </div>
 
           <div class="input-field col s4"></div>
+
+          <div class="col s12">
+
+            <div class="input-field col s12" id="result_div" style="display:none" >
+              <textarea
+                id="decrypted_text" 
+                class="materialize-textarea" readonly
+              ></textarea><label for="decrypted_text">Decrypted Text</label>
+
+          </div>
         </div>
       </div>
     </div>
