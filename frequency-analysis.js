@@ -20,7 +20,7 @@ function frequencyList() {
     orderedLetters = output[0];
     countsOrdered = output[1];
 
-    frequencyTable = "<p style=\"margin-top:20px;\">Frequencies of the given text:</p><table id=\"freqTable\"><tr>";
+    frequencyTable = "<p style=\"margin-top:20px;\">Frequencies (Cipher Text):</p><table id=\"freqTable\"><tr>";
 
     for (i = 0; i < orderedLetters.length; i++) {
         frequencyTable += "<td style=\"text-align:center\">";
@@ -46,6 +46,8 @@ function frequencyList() {
     frequencyTable += "</tr></table><br>";
     document.getElementById("frequencyItems").innerHTML = frequencyTable;
     document.getElementById("makeSubsButton").style.display = "block";
+    document.getElementById("alphabetFrequency").style.display = "block";
+
 }
 
 function makeSubstitutions() {
